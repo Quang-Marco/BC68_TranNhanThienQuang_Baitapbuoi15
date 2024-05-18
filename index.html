@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Bài tập hàm</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- GG Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Favicon -->
+    <link
+      rel="shortcut icon"
+      href="https://cdn.icon-icons.com/icons2/2248/PNG/512/function_icon_137564.png"
+      type="image/x-icon"
+    />
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+
+    <!-- FontAwesome 6.2.0 CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Style CSS -->
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: "Oswald", sans-serif;
+      }
+
+      body {
+        background: url(https://gcs.tripi.vn/public-tripi/tripi-feed/img/474098koW/background-nen-xam-dep_101024709.jpg)
+          center / cover;
+      }
+
+      body::-webkit-scrollbar {
+        display: none;
+      }
+
+      .container h2 {
+        font-family: "Pacifico", cursive;
+        color: rgb(29, 29, 214);
+      }
+
+      .tab-pane {
+        min-width: 1080px;
+      }
+
+      .tab-content {
+        background: url(https://khoinguonsangtao.vn/wp-content/uploads/2021/09/background-trang-xanh.jpg)
+          center / cover;
+      }
+
+      .nav-link {
+        background-color: rgb(233, 236, 239);
+        width: 120px;
+        margin-bottom: 10px;
+      }
+
+      .d-inline-block {
+        color: rgb(29, 29, 214);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container p-5">
+      <div class="d-flex align-items-start">
+        <div
+          class="nav flex-column nav-pills me-3"
+          id="v-pills-tab"
+          role="tablist"
+          aria-orientation="vertical"
+        >
+          <button
+            class="nav-link active"
+            id="v-pills-home-tab"
+            data-bs-toggle="pill"
+            data-bs-target="#v-pills-home"
+            type="button"
+            role="tab"
+            aria-controls="v-pills-home"
+            aria-selected="true"
+          >
+            <i class="fa-solid fa-book text-warning"></i>
+            <i class="fa-solid fa-book-open d-none"></i>
+            Bài 1
+          </button>
+          <button
+            class="nav-link"
+            id="v-pills-profile-tab"
+            data-bs-toggle="pill"
+            data-bs-target="#v-pills-profile"
+            type="button"
+            role="tab"
+            aria-controls="v-pills-profile"
+            aria-selected="false"
+          >
+            <i class="fa-solid fa-book text-warning"></i>
+            <i class="fa-solid fa-book-open d-none"></i>
+            Bài 2
+          </button>
+          <button
+            class="nav-link"
+            id="v-pills-disabled-tab"
+            data-bs-toggle="pill"
+            data-bs-target="#v-pills-disabled"
+            type="button"
+            role="tab"
+            aria-controls="v-pills-disabled"
+            aria-selected="false"
+          >
+            <i class="fa-solid fa-book text-warning"></i>
+            <i class="fa-solid fa-book-open d-none"></i>
+            Bài 3
+          </button>
+          <button
+            class="nav-link"
+            id="v-pills-messages-tab"
+            data-bs-toggle="pill"
+            data-bs-target="#v-pills-messages"
+            type="button"
+            role="tab"
+            aria-controls="v-pills-messages"
+            aria-selected="false"
+          >
+            <i class="fa-solid fa-book text-warning"></i>
+            <i class="fa-solid fa-book-open d-none"></i>
+            Bài 4
+          </button>
+        </div>
+        <div class="tab-content rounded-4" id="v-pills-tabContent">
+          <!-- Bài 1 -->
+
+          <div
+            class="tab-pane fade show active"
+            id="v-pills-home"
+            role="tabpanel"
+            aria-labelledby="v-pills-home-tab"
+            tabindex="0"
+          >
+            <div class="container p-5">
+              <h2 class="mb-5">🏫 Quản lý tuyển sinh</h2>
+              <div class="row">
+                <div class="col-4 mb-3">
+                  <input
+                    type="number"
+                    class="form-control"
+                    name=""
+                    id="diemChuan"
+                    aria-describedby="helpId"
+                    placeholder="Điểm chuẩn"
+                  />
+                </div>
+                <div class="col-4 mb-3">
+                  <select
+                    class="form-select form-select-lg"
+                    name=""
+                    id="chonKhuVuc"
+                  >
+                    <option selected>Chọn khu vực</option>
+                    <option value="">A</option>
+                    <option value="">B</option>
+                    <option value="">C</option>
+                  </select>
+                </div>
+                <div class="col-4 mb-3">
+                  <select
+                    class="form-select form-select-lg"
+                    name=""
+                    id="chonKhuVuc"
+                  >
+                    <option selected>Chọn đối tượng</option>
+                    <option value="">1</option>
+                    <option value="">2</option>
+                    <option value="">3</option>
+                  </select>
+                </div>
+                <div class="col-4 mb-3">
+                  <input
+                    type="number"
+                    class="form-control"
+                    name=""
+                    id="diemMonThuNhat"
+                    aria-describedby="helpId"
+                    placeholder="Điểm môn thứ nhất"
+                  />
+                </div>
+                <div class="col-4 mb-3">
+                  <input
+                    type="number"
+                    class="form-control"
+                    name=""
+                    id="diemMonThuHai"
+                    aria-describedby="helpId"
+                    placeholder="Điểm môn thứ hai"
+                  />
+                </div>
+                <div class="col-4 mb-3">
+                  <input
+                    type="number"
+                    class="form-control"
+                    name=""
+                    id="diemMonThuBa"
+                    aria-describedby="helpId"
+                    placeholder="Điểm môn thứ ba"
+                  />
+                </div>
+              </div>
+              <button id="tinhTrungBinh" class="btn btn-primary">
+                Tính trung bình
+              </button>
+              <div class="bg-body-tertiary rounded p-3 mt-4">
+                <i
+                  class="fa-regular fa-hand-point-right text-warning fs-5 me-2"
+                ></i>
+                <p class="bai2 d-inline-block mb-0"></p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bài 2 -->
+
+          <div
+            class="tab-pane fade"
+            id="v-pills-profile"
+            role="tabpanel"
+            aria-labelledby="v-pills-profile-tab"
+            tabindex="0"
+          >
+            <div class="container p-5">
+              <h2>🔋 Tính tiền điện</h2>
+              <div class="row py-4 mb-3">
+                <h3 class="text-center">Mô hình 3 khối</h3>
+                <div class="col-3">
+                  <ul>
+                    <li>Số thứ nhất</li>
+                    <li>Số thứ hai</li>
+                    <li>Số thứ ba</li>
+                    <li>Số thứ tư</li>
+                    <li>Số thứ năm</li>
+                  </ul>
+                </div>
+                <div class="col-6">
+                  <ul>
+                    <li>
+                      Bước 1: Tạo biến soThuNhat, soThuHai, soThuBa, soThuTu,
+                      soThuNam, soTrungBinh
+                    </li>
+                    <li>
+                      Bước 2: Tạo 5 input để người dùng nhập vào 5 số thực, tạo
+                      button tính trung bình, gắn sự kiện onclick cho button
+                    </li>
+                    <li>
+                      Bước 3: Khi người dùng nhập giá trị và click vào button,
+                      lấy value người dùng vừa nhập và gán cho soThuNhat,
+                      soThuHai, soThuBa, soThuTu, soThuNam
+                    </li>
+                    <li>
+                      Bước 4: Sử dụng công thức tính trung bình: soTrungBinh = (
+                      soThuNhat + soThuHai + soThuBa + soThuTu + soThuNam) / 5
+                    </li>
+                    <li>
+                      Bước 5: thay đổi nội dung của thẻ bằng innerHTML, in ra số
+                      trung bình
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-3">
+                  <ul>
+                    <li>Số trung bình</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-4 mb-3">
+                  <input
+                    type="number"
+                    class="form-control"
+                    name=""
+                    id="soThuNhat"
+                    aria-describedby="helpId"
+                    placeholder="Nhập số thứ nhất"
+                  />
+                </div>
+                <div class="col-4 mb-3">
+                  <input
+                    type="number"
+                    class="form-control"
+                    name=""
+                    id="soThuHai"
+                    aria-describedby="helpId"
+                    placeholder="Nhập số thứ hai"
+                  />
+                </div>
+                <div class="col-4 mb-3">
+                  <input
+                    type="number"
+                    class="form-control"
+                    name=""
+                    id="soThuBa"
+                    aria-describedby="helpId"
+                    placeholder="Nhập số thứ ba"
+                  />
+                </div>
+                <div class="col-4 mb-3">
+                  <input
+                    type="number"
+                    class="form-control"
+                    name=""
+                    id="soThuTu"
+                    aria-describedby="helpId"
+                    placeholder="Nhập số thứ tư"
+                  />
+                </div>
+                <div class="col-4 mb-3">
+                  <input
+                    type="number"
+                    class="form-control"
+                    name=""
+                    id="soThuNam"
+                    aria-describedby="helpId"
+                    placeholder="Nhập số thứ năm"
+                  />
+                </div>
+              </div>
+              <button id="tinhTrungBinh" class="btn btn-primary">
+                Tính trung bình
+              </button>
+              <div class="bg-body-tertiary rounded p-3 mt-4">
+                <i
+                  class="fa-regular fa-hand-point-right text-warning fs-5 me-2"
+                ></i>
+                <p class="bai2 d-inline-block mb-0"></p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bài 3 -->
+
+          <div
+            class="tab-pane fade"
+            id="v-pills-disabled"
+            role="tabpanel"
+            aria-labelledby="v-pills-disabled-tab"
+            tabindex="0"
+          >
+            <div class="container p-5">
+              <h2>💰 Tính thuế thu nhập cá nhân</h2>
+              <div class="row py-4 mb-3">
+                <h3 class="text-center">Mô hình 3 khối</h3>
+                <div class="col-3">
+                  <ul>
+                    <li>Số tiền USD</li>
+                  </ul>
+                </div>
+                <div class="col-6">
+                  <ul>
+                    <li>Bước 1: Tạo biến tienUSD, tienVND</li>
+                    <li>
+                      Bước 2: Tạo 1 input để người dùng nhập số tiền USD, tạo
+                      button quy đổi tiền, gắn sự kiện onclick cho button
+                    </li>
+                    <li>
+                      Bước 3: Khi người dùng nhập giá trị và click vào button,
+                      lấy value người dùng vừa nhập và gán cho tienUSD
+                    </li>
+                    <li>
+                      Bước 4: Sử dụng công thức quy đổi tiền: tienVND = tienUSD
+                      * 23500
+                    </li>
+                    <li>
+                      Bước 5: thay đổi nội dung của thẻ bằng innerHTML, in ra số
+                      tiền VND
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-3">
+                  <ul>
+                    <li>Số tiền VND</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-4 mb-3">
+                  <input
+                    type="number"
+                    class="form-control"
+                    name=""
+                    id="tienUSD"
+                    aria-describedby="helpId"
+                    placeholder="Nhập số tiền USD"
+                  />
+                </div>
+              </div>
+              <button id="quyDoiTien" class="btn btn-primary">
+                Quy đổi tiền
+              </button>
+              <div class="bg-body-tertiary rounded p-3 mt-4">
+                <i
+                  class="fa-regular fa-hand-point-right text-warning fs-5 me-2"
+                ></i>
+                <p class="bai3 d-inline-block mb-0"></p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bài 4 -->
+
+          <div
+            class="tab-pane fade"
+            id="v-pills-messages"
+            role="tabpanel"
+            aria-labelledby="v-pills-messages-tab"
+            tabindex="0"
+          >
+            <div class="container p-5">
+              <h2>🕸️ Tính tiền cáp</h2>
+              <div class="row py-4 mb-3">
+                <h3 class="text-center">Mô hình 3 khối</h3>
+                <div class="col-3">
+                  <ul>
+                    <li>Chiều dài hình chữ nhật</li>
+                    <li>Chiều rộng hình chữ nhật</li>
+                  </ul>
+                </div>
+                <div class="col-6">
+                  <ul>
+                    <li>
+                      Bước 1: Tạo biến chieuDai, chieuRong, dienTich, chuVi
+                    </li>
+                    <li>
+                      Bước 2: Tạo 2 input để người dùng nhập chiều dài và chiều
+                      rộng của hình chữ nhật, tạo button tính diện tích và chu
+                      vi, gắn sự kiện onclick cho button
+                    </li>
+                    <li>
+                      Bước 3: Khi người dùng nhập giá trị và click vào button,
+                      lấy value người dùng vừa nhập và gán cho chieuDai,
+                      chieuRong
+                    </li>
+                    <li>
+                      Bước 4: Sử dụng công thức tính diện tích: dienTich =
+                      chieuDai * chieuRong
+                    </li>
+                    <li>
+                      Bước 5: Sử dụng công thức tính chu vi: chuVi = (chieuDai +
+                      chieuRong) * 2
+                    </li>
+                    <li>
+                      Bước 6: thay đổi nội dung của thẻ bằng innerHTML, in ra
+                      diện tích và chu vi hình chữ nhật
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-3">
+                  <ul>
+                    <li>Diện tích hình chữ nhật</li>
+                    <li>Chu vi hình chữ nhật</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-4 mb-3">
+                  <input
+                    type="number"
+                    class="form-control"
+                    name=""
+                    id="chieuDai"
+                    aria-describedby="helpId"
+                    placeholder="Nhập chiều dài hình chữ nhật"
+                  />
+                </div>
+                <div class="col-4 mb-3">
+                  <input
+                    type="number"
+                    class="form-control"
+                    name=""
+                    id="chieuRong"
+                    aria-describedby="helpId"
+                    placeholder="Nhập chiều rộng hình chữ nhật"
+                  />
+                </div>
+              </div>
+              <button id="tinhDienTichChuVi" class="btn btn-primary">
+                Tính diện tích và chu vi
+              </button>
+              <div class="bg-body-tertiary rounded p-3 mt-4">
+                <i
+                  class="fa-regular fa-hand-point-right text-warning fs-5 me-2"
+                ></i>
+                <p class="bai4 d-inline-block mb-0"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JavaScript Libraries -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Index JS -->
+    <script src="index.js"></script>
+  </body>
+</html>
