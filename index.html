@@ -234,7 +234,7 @@
                 </div>
               </div>
               <button id="tinhTrungBinh" class="btn btn-primary">
-                Tính trung bình
+                Kết quả
               </button>
               <div class="bg-body-tertiary rounded p-3 mt-4">
                 <i
@@ -255,58 +255,16 @@
             tabindex="0"
           >
             <div class="container p-5">
-              <h2>🔋 Tính tiền điện</h2>
-              <div class="row py-4 mb-3">
-                <h3 class="text-center">Mô hình 3 khối</h3>
-                <div class="col-3">
-                  <ul>
-                    <li>Số thứ nhất</li>
-                    <li>Số thứ hai</li>
-                    <li>Số thứ ba</li>
-                    <li>Số thứ tư</li>
-                    <li>Số thứ năm</li>
-                  </ul>
-                </div>
-                <div class="col-6">
-                  <ul>
-                    <li>
-                      Bước 1: Tạo biến soThuNhat, soThuHai, soThuBa, soThuTu,
-                      soThuNam, soTrungBinh
-                    </li>
-                    <li>
-                      Bước 2: Tạo 5 input để người dùng nhập vào 5 số thực, tạo
-                      button tính trung bình, gắn sự kiện onclick cho button
-                    </li>
-                    <li>
-                      Bước 3: Khi người dùng nhập giá trị và click vào button,
-                      lấy value người dùng vừa nhập và gán cho soThuNhat,
-                      soThuHai, soThuBa, soThuTu, soThuNam
-                    </li>
-                    <li>
-                      Bước 4: Sử dụng công thức tính trung bình: soTrungBinh = (
-                      soThuNhat + soThuHai + soThuBa + soThuTu + soThuNam) / 5
-                    </li>
-                    <li>
-                      Bước 5: thay đổi nội dung của thẻ bằng innerHTML, in ra số
-                      trung bình
-                    </li>
-                  </ul>
-                </div>
-                <div class="col-3">
-                  <ul>
-                    <li>Số trung bình</li>
-                  </ul>
-                </div>
-              </div>
+              <h2 class="mb-5">🔋 Tính tiền điện</h2>
               <div class="row">
                 <div class="col-4 mb-3">
                   <input
                     type="number"
                     class="form-control"
                     name=""
-                    id="soThuNhat"
+                    id="hoTen"
                     aria-describedby="helpId"
-                    placeholder="Nhập số thứ nhất"
+                    placeholder="Nhập họ tên"
                   />
                 </div>
                 <div class="col-4 mb-3">
@@ -314,39 +272,9 @@
                     type="number"
                     class="form-control"
                     name=""
-                    id="soThuHai"
+                    id="soKw"
                     aria-describedby="helpId"
-                    placeholder="Nhập số thứ hai"
-                  />
-                </div>
-                <div class="col-4 mb-3">
-                  <input
-                    type="number"
-                    class="form-control"
-                    name=""
-                    id="soThuBa"
-                    aria-describedby="helpId"
-                    placeholder="Nhập số thứ ba"
-                  />
-                </div>
-                <div class="col-4 mb-3">
-                  <input
-                    type="number"
-                    class="form-control"
-                    name=""
-                    id="soThuTu"
-                    aria-describedby="helpId"
-                    placeholder="Nhập số thứ tư"
-                  />
-                </div>
-                <div class="col-4 mb-3">
-                  <input
-                    type="number"
-                    class="form-control"
-                    name=""
-                    id="soThuNam"
-                    aria-describedby="helpId"
-                    placeholder="Nhập số thứ năm"
+                    placeholder="Nhập số kW"
                   />
                 </div>
               </div>
@@ -372,41 +300,7 @@
             tabindex="0"
           >
             <div class="container p-5">
-              <h2>💰 Tính thuế thu nhập cá nhân</h2>
-              <div class="row py-4 mb-3">
-                <h3 class="text-center">Mô hình 3 khối</h3>
-                <div class="col-3">
-                  <ul>
-                    <li>Số tiền USD</li>
-                  </ul>
-                </div>
-                <div class="col-6">
-                  <ul>
-                    <li>Bước 1: Tạo biến tienUSD, tienVND</li>
-                    <li>
-                      Bước 2: Tạo 1 input để người dùng nhập số tiền USD, tạo
-                      button quy đổi tiền, gắn sự kiện onclick cho button
-                    </li>
-                    <li>
-                      Bước 3: Khi người dùng nhập giá trị và click vào button,
-                      lấy value người dùng vừa nhập và gán cho tienUSD
-                    </li>
-                    <li>
-                      Bước 4: Sử dụng công thức quy đổi tiền: tienVND = tienUSD
-                      * 23500
-                    </li>
-                    <li>
-                      Bước 5: thay đổi nội dung của thẻ bằng innerHTML, in ra số
-                      tiền VND
-                    </li>
-                  </ul>
-                </div>
-                <div class="col-3">
-                  <ul>
-                    <li>Số tiền VND</li>
-                  </ul>
-                </div>
-              </div>
+              <h2 class="mb-5">💰 Tính thuế thu nhập cá nhân</h2>
               <div class="row">
                 <div class="col-4 mb-3">
                   <input
@@ -441,51 +335,7 @@
             tabindex="0"
           >
             <div class="container p-5">
-              <h2>🕸️ Tính tiền cáp</h2>
-              <div class="row py-4 mb-3">
-                <h3 class="text-center">Mô hình 3 khối</h3>
-                <div class="col-3">
-                  <ul>
-                    <li>Chiều dài hình chữ nhật</li>
-                    <li>Chiều rộng hình chữ nhật</li>
-                  </ul>
-                </div>
-                <div class="col-6">
-                  <ul>
-                    <li>
-                      Bước 1: Tạo biến chieuDai, chieuRong, dienTich, chuVi
-                    </li>
-                    <li>
-                      Bước 2: Tạo 2 input để người dùng nhập chiều dài và chiều
-                      rộng của hình chữ nhật, tạo button tính diện tích và chu
-                      vi, gắn sự kiện onclick cho button
-                    </li>
-                    <li>
-                      Bước 3: Khi người dùng nhập giá trị và click vào button,
-                      lấy value người dùng vừa nhập và gán cho chieuDai,
-                      chieuRong
-                    </li>
-                    <li>
-                      Bước 4: Sử dụng công thức tính diện tích: dienTich =
-                      chieuDai * chieuRong
-                    </li>
-                    <li>
-                      Bước 5: Sử dụng công thức tính chu vi: chuVi = (chieuDai +
-                      chieuRong) * 2
-                    </li>
-                    <li>
-                      Bước 6: thay đổi nội dung của thẻ bằng innerHTML, in ra
-                      diện tích và chu vi hình chữ nhật
-                    </li>
-                  </ul>
-                </div>
-                <div class="col-3">
-                  <ul>
-                    <li>Diện tích hình chữ nhật</li>
-                    <li>Chu vi hình chữ nhật</li>
-                  </ul>
-                </div>
-              </div>
+              <h2 class="mb-5">🕸️ Tính tiền cáp</h2>
               <div class="row">
                 <div class="col-4 mb-3">
                   <input
