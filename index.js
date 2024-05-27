@@ -18,18 +18,39 @@ tabButtons.forEach((nav) => {
 // Đảm bảo tab đầu tiên được active khi tải trang
 document.querySelector(".nav-link.active").click();
 
+// Format Currency VND
+
+const formatCurrencyVND = (number, locale = "vi-VN", currency = "VND") => {
+  return new Intl.NumberFormat(locale, {
+    style: "currency",
+    currency: currency,
+  }).format(number);
+};
+
+// Format Currency USD
+
+const formatCurrencyUSD = (number, locale = "en-US", currency = "USD") => {
+  return new Intl.NumberFormat(locale, {
+    style: "currency",
+    currency: currency,
+  }).format(number);
+};
+
 // Bài 1
 
 const tinhDiemKhuVuc = (khuVuc) => {
   switch (khuVuc) {
     case "A":
       return 2;
+      break;
     case "B":
       return 1;
+      break;
     case "C":
       return 0.5;
+      break;
     default:
-      return 0;
+      alert("Vui lòng chọn khu vực");
   }
 };
 
@@ -37,12 +58,15 @@ const tinhDiemDoiTuong = (doiTuong) => {
   switch (doiTuong) {
     case "1":
       return 2.5;
+      break;
     case "2":
       return 1.5;
+      break;
     case "3":
       return 1;
+      break;
     default:
-      return 0;
+      alert("Vui lòng chọn đối tượng");
   }
 };
 
@@ -115,11 +139,100 @@ document.getElementById("tinhTienDien").onclick = () => {
 
   document.querySelector(
     ".bai2"
-  ).innerHTML = `Họ tên khách hàng: ${hoTen}; Tiền điện: ${tongTienDien.toLocaleString(
-    "vi-VN",
-    {
-      style: "currency",
-      currency: "VND",
-    }
+  ).innerHTML = `Họ tên khách hàng: ${hoTen}; Tiền điện: ${formatCurrencyVND(
+    tongTienDien
+  )}`;
+};
+
+// Bài 3
+
+const kiemTraThueSuat = (thuNhapChiuThue) => {
+  if (thuNhapChiuThue > 0 && thuNhapChiuThue <= 60000000) {
+    return 0.05;
+  } else if (thuNhapChiuThue > 60000000 && thuNhapChiuThue <= 120000000) {
+    return 0.1;
+  } else if (thuNhapChiuThue > 120000000 && thuNhapChiuThue <= 210000000) {
+    return 0.15;
+  } else if (thuNhapChiuThue > 210000000 && thuNhapChiuThue <= 384000000) {
+    return 0.2;
+  } else if (thuNhapChiuThue > 384000000 && thuNhapChiuThue <= 624000000) {
+    return 0.25;
+  } else if (thuNhapChiuThue > 624000000 && thuNhapChiuThue <= 960000000) {
+    return 0.3;
+  } else if (thuNhapChiuThue > 960000000) {
+    return 0.35;
+  }
+};
+
+document.getElementById("tinhTienThue").onclick = () => {
+  let hoTen = document.getElementById("hoTenBai3").value;
+  let tongThuNhapNam = document.getElementById("tongThuNhapNam").value * 1;
+  let soNguoiPhuThuoc = document.getElementById("soNguoiPhuThuoc").value * 1;
+  let thuNhapChiuThue = tongThuNhapNam - 4000000 - soNguoiPhuThuoc * 1600000;
+  let thueSuat = kiemTraThueSuat(thuNhapChiuThue);
+  let tienThue = thuNhapChiuThue * thueSuat;
+
+  if (soNguoiPhuThuoc < 0) {
+    alert("Số người phụ thuộc không hợp lệ! Vui lòng nhập lại");
+  } else if (thuNhapChiuThue <= 0) {
+    alert("Tổng thu nhập năm không hợp lệ! Vui lòng nhập lại");
+  } else {
+    document.querySelector(
+      ".bai3"
+    ).innerHTML = `Họ tên: ${hoTen}; Tiền thuế thu nhập cá nhân: ${formatCurrencyVND(
+      tienThue
+    )}`;
+  }
+};
+
+// Bài 4
+
+const toggleInput = () => {
+  let loaiKhachHang = document.getElementById("loaiKhachHang").value;
+  if (loaiKhachHang == "doanhNghiep") {
+    document.getElementById("soKetNoi").style.display = "block";
+  } else {
+    document.getElementById("soKetNoi").style.display = "none";
+  }
+};
+
+let phiXuLyHoaDon = 0;
+let phiDichVuCoBan = 0;
+let phiThueKenhCaoCap = 0;
+const tinhTienCap = (loaiKhachHang) => {
+  switch (loaiKhachHang) {
+    case "nhaDan":
+      phiXuLyHoaDon = 4.5;
+      phiDichVuCoBan = 20.5;
+      phiThueKenhCaoCap = 7.5;
+      break;
+    case "doanhNghiep":
+      phiXuLyHoaDon = 15;
+      phiDichVuCoBan = 75;
+      phiThueKenhCaoCap = 50;
+      break;
+    default:
+      alert("Vui lòng chọn loại khách hàng");
+  }
+};
+
+document.getElementById("tinhTienCap").onclick = () => {
+  let loaiKhachHang = document.getElementById("loaiKhachHang").value;
+  let maKhachHang = document.getElementById("maKhachHang").value;
+  let soKenhCaoCap = document.getElementById("soKenhCaoCap").value * 1;
+  let soKetNoi = document.getElementById("soKetNoi").value * 1;
+  tinhTienCap(loaiKhachHang);
+
+  if (soKetNoi > 10) {
+    phiDichVuCoBan += (soKetNoi - 10) * 5;
+  }
+
+  let tienCap =
+    phiXuLyHoaDon + phiDichVuCoBan + phiThueKenhCaoCap * soKenhCaoCap;
+
+  document.querySelector(
+    ".bai4"
+  ).innerHTML = `Mã khách hàng: ${maKhachHang}; Tiền cáp: ${formatCurrencyUSD(
+    tienCap
   )}`;
 };

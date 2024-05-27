@@ -56,7 +56,8 @@
 
       body {
         background: url(https://gcs.tripi.vn/public-tripi/tripi-feed/img/474098koW/background-nen-xam-dep_101024709.jpg)
-          center / cover;
+          fixed center / cover;
+        min-height: 100vh;
       }
 
       body::-webkit-scrollbar {
@@ -69,12 +70,13 @@
       }
 
       .tab-pane {
-        min-width: 1080px;
+        min-width: 1100px;
       }
 
       .tab-content {
         background: url(https://khoinguonsangtao.vn/wp-content/uploads/2021/09/background-trang-xanh.jpg)
           center / cover;
+        min-height: 600px;
       }
 
       .nav-link {
@@ -334,10 +336,15 @@
               <h2 class="mb-5">🕸️ Tính tiền cáp</h2>
               <div class="row">
                 <div class="col-4 mb-3">
-                  <select class="form-select" name="" id="loaiKhachHang">
+                  <select
+                    class="form-select"
+                    name=""
+                    id="loaiKhachHang"
+                    onchange="toggleInput()"
+                  >
                     <option selected>Chọn loại khách hàng</option>
-                    <option value="">Nhà dân</option>
-                    <option value="">Doanh nghiệp</option>
+                    <option value="nhaDan">Nhà dân</option>
+                    <option value="doanhNghiep">Doanh nghiệp</option>
                   </select>
                 </div>
 
@@ -359,6 +366,17 @@
                     id="soKenhCaoCap"
                     aria-describedby="helpId"
                     placeholder="Số kênh cao cấp"
+                  />
+                </div>
+                <div class="col-4 mb-3">
+                  <input
+                    type="number"
+                    class="form-control"
+                    name=""
+                    id="soKetNoi"
+                    style="display: none"
+                    aria-describedby="helpId"
+                    placeholder="Số kết nối"
                   />
                 </div>
               </div>
